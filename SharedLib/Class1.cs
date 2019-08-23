@@ -19,17 +19,14 @@ namespace SharedLib
                     if (response.IsSuccessStatusCode)
                         Console.WriteLine("complete success!");
                     else
-                        Console.WriteLine("failed ...due to authentication failure which is OK");
+                        Console.WriteLine("failed due to authentication failure which is still OK the purpose of this test");
                 }
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
                 if (ex.InnerException != null)
-                {
-                    Console.BackgroundColor = ConsoleColor.Cyan;
                     Console.WriteLine(ex.InnerException.ToString());
-                }
             }
         }
     }
