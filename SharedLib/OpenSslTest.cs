@@ -3,7 +3,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 namespace SharedLib
 {
-    public class Class1
+    public class OpenSslTest
     {
         public async Task TryConnect()
         {
@@ -19,7 +19,7 @@ namespace SharedLib
                     if (response.IsSuccessStatusCode)
                         Console.WriteLine("complete success!");
                     else
-                        Console.WriteLine("failed due to authentication failure which is still OK the purpose of this test");
+                        Console.WriteLine("failed due to authentication failure - which is OK for the purpose of this test");
                 }
             }
             catch (Exception ex)

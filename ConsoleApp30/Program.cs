@@ -6,7 +6,7 @@ namespace ConsoleApp30
     {
         static async Task Main(string[] args)
         {
-            var obj = new SharedLib.Class1();
+            var obj = new SharedLib.OpenSslTest();
             await obj.TryConnect();
             Console.WriteLine("hit any key to exit...");
             Console.ReadKey();
