@@ -1,11 +1,12 @@
 # SSL Handshake failed with OpenSSL error
 
-This is a demo repository replicating SSL issues .NET Core 3.0 preview 8.
+This is a demo repository replicating OpenSSL security level issues/solutions when connecting to a downlevel SSL certificate (i.e. low TLS version) from a .NET application running in a Linux container.
+
 For the full thread see [see Github issue 40538](https://github.com/dotnet/corefx/issues/40538).
 
 ## Conclusion
 
-The Debian Buster image has raised the OpenSSL TLS security level to 2. 
+The Debian Buster image has raised the OpenSSL TLS security level to 2.
 Adding the below to the Dockerfile in the .NET Core 3.0 app downlevels the OpenSSL TLS security level to 1, which is a level then compatible with the current Oanda SSL certificate on (https://api-fxpractice.oanda.com);
 
 ```dockerfile
@@ -28,6 +29,6 @@ The default `/etc/ssl/openssl.cnf` file had _been removed_ from the ASP.NET 6.0 
 
 Long story short I sacrificed using the smaller image and changed to using the vanilla/non-alpine base image _mcr.microsoft.com/dotnet/aspnet:6.0_ and then the build works again as expected.
 
-...then I discovered the SSL certificate on my desired destination URI had been updated anyway :)
+...then I discovered the SSL certificate on my desired destination URI had been updated anyway so I was able to remove the above :)
 
-But this repository serves as an example of how to handle connecting to downlevel SSL certificates.
+This repository sill serves as an example of how to handle connecting to downlevel SSL certificates.
