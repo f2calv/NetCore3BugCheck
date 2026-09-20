@@ -1,5 +1,9 @@
 # SSL Handshake failed with OpenSSL error
 
+> [!IMPORTANT]
+> This repository has been retired and is no longer maintained. It is retained for historical
+> reference and should not be treated as supported or secure production guidance.
+
 This is a demo repository replicating OpenSSL security level issues/solutions when connecting to a downlevel SSL certificate (i.e. low TLS version) from a .NET application running in a Linux container.
 
 For the full thread see [see Github issue 40538](https://github.com/dotnet/corefx/issues/40538).
